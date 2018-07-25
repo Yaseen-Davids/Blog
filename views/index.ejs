@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>StanceNation - Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="favicon" href="https://image.ibb.co/b8w7r8/logo_preview_4a613baa_64db_4063_9dfc_f1a90ee1b70d.jpg">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <!-- summernote css/js -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+    <!-- Font links -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins|Lora" rel="stylesheet">
+</head>
+<body>
+
+    <!-- This is the main container -->
+    <div id="container">
+
+        <!-- This is the home title section -->
+        <section>
+            <div id="home_title">
+                <!-- This is the main title -->
+                <a href="/"><h4>ST<span class="header_a">Λ</span>NCE | N<span class="header_a">Λ</span>TION</h4></a>
+                <!-- This is the slogan of the blog -->
+                <p>The <span class="header_a">HOME</span> of <span class="header_a">STANCE</span> Cars</p>
+            </div>
+        </section>
+
+        <!-- This is the navbar -->
+        <nav>
+            <div id="navbar">
+                <!-- This is the navbar links -->
+                <div id="nav_links">
+                    <a href="/" class="selected">Home</a>
+                    <!-- If user is logged in, show New Post button -->
+                    <% if (user) { %>
+                        <a href="/new_post">New Post</a>
+                    <% } %>
+                    <a href="#contact" id="goToCont">Contact</a>
+                    <a href="/archives">Archives</a>
+                    <!-- If user is logged in, show logout button -->
+                    <% if (user) { %>
+                        <!-- Logout button -->
+                        <a href="/users/logout" class="login-link">Logout</a>
+                        <!-- Else if user is not logged in, show login and register button -->
+                    <% } else { %>
+                        <!-- Register button -->
+                        <a href="/users/register" class="register-link">Register</a>
+                        <!-- Login button -->
+                        <a href="/users/login" class="login-link">Login</a>
+                    <% } %>
+                </div>
+            </div>
+        </nav>
+
+        <!-- If user is logged show Add New Post button -->
+        <% if (user) { %>
+            <!-- New Post button -->
+            <div id="new_post_content">
+                <a href="/new_post"><button id="btn_new-post">Add New Post</button></a>
+            </div>
+        <% } %>
+
+        <br>
+        
+        <!-- This is the Message -->
+        <%- messages('message', locals) %>
+
+        <!-- If user not logged in, show info icon and message -->
+        <% if (user) { %>
+
+            <!-- This is the logged in icon -->
+            <div id="logged-img">
+                <img src="https://image.ibb.co/ce7n8o/locked.png">
+            </div>
+
+            <!-- This is the information box -->
+            <div id="logged-in-main">
+                <h3>You are logged in. <a href="/users/logout">Logout</a></h3>
+            </div>
+            
+        <% } else { %>
+            <!-- This is the information icon -->
+            <div id="information-img">
+                <img src="https://image.ibb.co/kZY5uT/icon.png">
+            </div>
+
+            <!-- This is the information box -->
+            <div id="information-box-main">
+                <h3>In order to Post a blog, you need to <a href="/users/register">register</a> and <a href="/users/login">login</a>. Thank You</h3>
+            </div>
+        <% } %>
+
+        <!-- If there are posts, Show Posts -->
+        <% if (posts.length != 0) { %>
+            <% for(let i = 0; i < posts.length; i++) { %>
+            <section>
+                <!-- This the content container -->
+                <div id="content_container">
+                    <!-- This is the content wrapper -->
+                    <div class="content-wrapper">
+                        <div id="blog_post_container">
+                            <div id="blog_post_head">
+                                <!-- This is the blog post title -->
+                                <a href="/post/<%= posts[i].id %>"><h3><%= posts[i].title %></h3></a>
+                            </div>
+                            <div id="blog_post_content">
+                                <div id="blog_image">
+                                    <!-- This is the blog post image -->
+                                    <a href="/post/<%= posts[i].id %>"><img src="<%= posts[i].image %>"></a>
+                                </div>
+                                <div id="blog_body">
+                                    <h5 id="body_text">
+                                        <!-- This is the blog post body -->
+                                        <%- posts[i].body.substring(0, 360 - 1) + ' ...' %>
+                                    </h5>
+                                    <br>
+                                    <!-- This is the read more button -->
+                                    <a href="/post/<%= posts[i].id %>"><button class="readmore_btn">Read More</button></a>
+                                </div>
+                                <div id="blog_footer">
+                                    <h4>Posted on : <%= posts[i].time %></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <% } %>
+        <% } %>
+
+        <!-- This is the content section of the page that includes my contact details -->
+        <div class="contact" id="contact-section">
+
+            <h2>Want to get in touch ?</h2>
+        
+            <a href="#contactMe" id="contactMe-button"><button>Contact Me</button></a>
+        
+            <!-- This is the contact form -->
+            <form id="myForm">
+                <input type="text" name="yourName" placeholder="Your Name here" required>
+                <br>
+                <br>
+                <input type="email" name="yourEmail" placeholder="Your Email here" required>
+                <br>
+                <br>
+                <textarea name="yourMsg" rows="5" cols="36" placeholder="Your Message here"></textarea>
+                <br>
+                <br>
+                <button id="submit">Submit</button>
+            </form>
+        </div>
+
+        <!-- This is the footer -->
+        <footer>
+            <div id="footer" class="home-footer">
+                <div class="content-wrapper">
+                    Copyright &copy; 2018 &nbsp; | &nbsp;<span class="header_a">Yaseen Davids</span>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
+    <script src="/javascripts/main.js"></script>
+    <script src="/javascripts/smooth-scroll.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>StanceNation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="favicon" href="https://image.ibb.co/b8w7r8/logo_preview_4a613baa_64db_4063_9dfc_f1a90ee1b70d.jpg">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <!-- summernote css/js -->
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+    <!-- Font links -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins|Lora" rel="stylesheet">
+</head>
+<body>
+
+    <!-- This is the main container -->
+    <div id="container">
+
+       <!-- Home title <section></section> -->
+        <section>
+            <div id="home_title">
+                <!-- Header -->
+                <a href="/"><h4>ST<span class="header_a">Λ</span>NCE | N<span class="header_a">Λ</span>TION</h4></a>
+                <!-- Slogan -->
+                <p>The <span class="header_a">HOME</span> of <span class="header_a">STANCE</span> Cars</p>
+            </div>
+        </section>
+
+        <!-- This is the navbar -->
+        <nav>
+            <div id="navbar">
+                <!-- Navbar links -->
+                <div id="nav_links">
+                    <a href="/">Home</a>
+                    <!-- If user is logged in, show new post button -->
+                    <% if (user) { %>
+                        <a href="/new_post">New Post</a>
+                    <% } %>
+                    <a href="/archives">Archives</a>
+                    <!-- If user logged in, show logout button -->
+                    <% if (user) { %>
+                        <a href="/users/logout" class="login-link">Logout</a>
+                        <!-- Else show login and register button -->
+                    <% } else { %>
+                        <a href="/users/register" class="register-link">Register</a>
+                        <a href="/users/login" class="login-link">Login</a>
+                    <% } %>
+                </div>
+            </div>
+        </nav>
+
+        <!-- This is the error or success message -->
+        <%- messages('message', locals) %>
+
+        <!-- This is the container -->
+        <div class="form_container">
+
+            <!-- This is the header -->
+            <header>
+                <h1><%= posts.title %></h1>
+            </header>
+
+            <div class="blog_img">
+                <img class="blog_img" src="<%= posts.image %>">
+            </div>
+
+            <!-- This is shows the author of the post -->
+            <h4 class="blog_authorName">Written By: <span class="author_name"><%= author %></span> , <%= posts.time %></h4>
+
+            <!-- This is the blog body post -->
+            <h5 class="theBody_text"><%- posts.body %></h5>
+            <br>
+            <hr>
+            <br>
+            <!-- If user logged in % if username is equal to the author of the posts, show the edit and delete button -->
+            <% if (user) { %>
+                <% if (user.id == posts.author) { %>
+                    <!-- This is the edit button -->
+                    <a href="/edit_post/<%= posts.id %>" class="bBtn btn-edit">Edit</a>
+                    <!-- This is the delete button -->
+                    <a href="#del" class="bBtn btn-delete delete-blog" data-id="<%= posts.id %>">Delete</a>
+                <% } %>
+            <% } %>
+            
+        </div>
+
+        <!-- This is the footer -->
+        <footer>
+            <div id="footer">
+                <div class="content-wrapper">
+                    Copyright &copy; 2018 &nbsp; | &nbsp;<span class="header_a">Yaseen Davids</span>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
+    <script src="/javascripts/main.js"></script>
+
+</body>
+</html>

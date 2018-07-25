@@ -1,0 +1,1538 @@
+// Responsive stylesheet
+
+/* *************************** MOBILE *************************** */
+@media (min-width: 1px)
+and (max-width: 500px){
+    // This is the home page title
+    #home_title{
+        grid-area: home_title;
+        height: 120px;
+        
+        // This is the main title
+        h4{
+            margin-top: 20px;
+            margin-left: 10px;
+            font-size: 2.2em;
+        }
+        // This is the slogan
+        p{
+            word-spacing: 4px;
+            font-size: 1em;
+            margin-left: 20px;
+        }
+    }
+
+    // This is the navbar
+    #navbar{
+        height: 50px;
+
+        // This is the navbar links
+        #nav_links{
+            margin-top: 10px;
+            a{
+                margin-right: 20px;
+                font-size: 1em;
+            }
+        }
+    }
+
+    // This is the wrapper that centers everything
+    .content-wrapper{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    // This is the container that holds all content
+    #content_container{
+        margin-top: 100px;
+        
+        // This is the blog post container
+        #blog_post_container{
+            height: 580px;
+            border: 1px solid transparent;
+            padding: 5px;
+
+            // This is the header of the blog post
+            #blog_post_head{
+                height: 50px;
+                border: 1px solid transparent;
+                a{
+                    font-size: 1em;
+                }
+            }
+            // This is the blog post content
+            #blog_post_content{
+                display: grid;
+                grid-template-areas: 'blog_image'
+                'blog_body';
+                grid-template-columns: 1fr;
+                height: 500px;
+
+                // This is the blog post image
+                #blog_image{
+                    grid-area: blog_image;
+                    border: $borderSettings;
+                    height: 230px;
+
+                    img{
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+                // This is the body of the blog post
+                #blog_body{
+                    padding: 10px;
+
+                    h5{
+                        font-size: 0.9em;
+                    }
+                    .readmore_btn{
+                        cursor: pointer;
+                        text-decoration: none;
+                        background: grey;
+                        border: none;
+                        outline: none;
+                        padding: 2px 5px;
+                        transition: all 0.4s;
+                        font-family: 'Poppins', sans-serif;
+                        font-size: 0.8em;
+                        color: white;
+                        &:hover{
+                            padding: 2px 8px;
+                        }
+                    }        
+                }
+            }
+            // This is the footer of the blog post
+            #blog_footer{
+                letter-spacing: 1px;
+            }
+        }
+    }
+
+    /* This code is for the contact section of the page */
+    .contact{
+        padding: 5px;
+        margin-top: 200px;
+        height: 150px;
+
+        h2{
+            font-size: 1em;
+        }
+
+        a{
+            position: absolute;
+            left: 50%;
+            top: 60%;
+            transform: translate(-50%,-50%);
+            transition: all 0.3s;
+
+            button{
+                padding: 5px 10px;
+                font-size: 1em;
+
+                &:hover{
+                    padding: 5px 15px;
+                }
+            }
+        }
+
+        // This is my form
+        #myForm{
+            display: none;
+            opacity: 0;
+            position: absolute;
+            left: 50%;
+            top: 55%;
+            transform: translate(-50%,-50%);
+
+            input{
+                font-size: 0.9em;
+                border-radius: 3px;
+                padding: 2px;
+                width: 300px;
+            }
+            textarea{
+                border-radius: 3px;
+                font-size: 1em;
+                width: 300px;
+            }
+        }
+    }
+
+    // This is the footer
+    #footer{
+        margin-top: 100px;
+        padding: 1px;
+        font-size: 1em;
+    }
+
+    // This is the footer on the home page
+    .home-footer{
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        padding: 1px;
+    }
+
+    // This is the register link
+    .register-link{
+        position: absolute;
+        left: 85%;
+        top: 5%;
+        transform: translate(-50%,-50%);
+        width: 90px;
+        padding: 3px 3px;
+        font-size: 0.8em;
+        &:hover{
+            width: 100px;
+        }
+    }
+    // This is the login link
+    .login-link{
+        position: absolute;
+        left: 85%;
+        top: 14%;
+        transform: translate(-50%,-50%);
+        width: 90px;
+        padding: 3px 3px;
+        font-size: 0.8em;
+        &:hover{
+            width: 100px;
+        }
+    }
+
+    // This is the blog content of the archive page
+    #blog_post_content-archive{
+        height: 450px;
+
+        // This is the body of the blog post
+        #blog_body{
+            grid-area: blog_body;
+            border: $borderSettings;
+            padding: 10px;
+
+            h5{
+                font-size: 1.02em;
+            }
+            .readmore_btn{
+                padding: 2px 5px;
+                font-size: 0.9em;
+                &:hover{
+                    padding: 2px 8px;
+                }
+            }        
+        }
+    }
+
+    // This is the form container
+    .form_container{
+        padding: 10px;
+        margin-right: 10px;
+        margin-left: 10px;
+
+        h1{
+            font-size: 1.4em;
+        }
+
+        .blog_img{
+            height: 250px;
+            width: 300px;
+            margin-left: -2%;
+        }
+        .blog_authorName{
+            margin-top: 20px;
+            font-size: 1em;
+        }
+        .theBody_text{
+            font-size: 1em;
+        }
+    }
+
+    #btn_new-post{
+        display: none;
+    }
+
+    .container{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .alert{
+        margin-left: 1.8%;
+        padding: 10px;
+        width: 300px;
+        border-radius: 5px;
+    }
+
+    // This is the information icon
+    #information-img{
+        position: fixed;
+        top: 250px;
+        right: -50px;
+        cursor: pointer;
+    }
+    
+    // This is the information box
+    #information-box-main{
+        display: none;
+        position: fixed;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        padding: 5px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    
+
+}
+
+/* *************************** MOBILE *************************** */
+@media (min-width:320px)
+and (max-width:374px){
+    // This is the home page title
+    #home_title{
+        grid-area: home_title;
+        height: 120px;
+        
+        // This is the main title
+        h4{
+            margin-top: 20px;
+            margin-left: 10px;
+            font-size: 1.4em;
+        }
+        // This is the slogan
+        p{
+            word-spacing: 4px;
+            font-size: 0.8em;
+            margin-left: 20px;
+        }
+    }
+
+    // This is the blog content of the archive page
+    #blog_post_content-archive{
+        height: 550px;
+
+        // This is the body of the blog post
+        #blog_body{
+            grid-area: blog_body;
+            border: $borderSettings;
+            padding: 10px;
+
+            h5{
+                font-size: 0.9em;
+            }
+            .readmore_btn{
+                padding: 2px 5px;
+                font-size: 0.9em;
+                &:hover{
+                    padding: 2px 8px;
+                }
+            }        
+        }
+    }
+}
+
+/* *************************** MOBILE *************************** */
+@media (min-width:375px)
+and (max-width:425px){
+    // This is the home page title
+    #home_title{
+        grid-area: home_title;
+        height: 120px;
+        
+        // This is the main title
+        h4{
+            margin-top: 20px;
+            margin-left: 10px;
+            font-size: 1.5em;
+        }
+        // This is the slogan
+        p{
+            word-spacing: 4px;
+            font-size: 0.8em;
+            margin-left: 20px;
+        }
+    }
+}
+
+/* *************************** MOBILE LARGE *************************** */
+// This is for large mobile devices or small tablet devices
+@media (min-width:501px)
+and (max-width:600px){
+
+    // This is the home page title
+    #home_title{
+        grid-area: home_title;
+        height: 120px;
+        
+        // This is the main title
+        h4{
+            margin-top: 20px;
+            margin-left: 10px;
+            font-size: 2.5em;
+        }
+        // This is the slogan
+        p{
+            word-spacing: 4px;
+            font-size: 1em;
+            margin-left: 20px;
+        }
+    }
+
+    // This is the navbar
+    #navbar{
+        height: 50px;
+
+        // This is the navbar links
+        #nav_links{
+            margin-top: 10px;
+            a{
+                margin-right: 20px;
+                font-size: 1em;
+            }
+        }
+    }
+
+    // This is the wrapper that centers everything
+    .content-wrapper{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    // This is the container that holds all content
+    #content_container{
+        margin-top: 100px;
+        
+        // This is the blog post container
+        #blog_post_container{
+            height: 580px;
+            border: 1px solid transparent;
+            padding: 5px;
+
+            // This is the header of the blog post
+            #blog_post_head{
+                height: 50px;
+                border: 1px solid transparent;
+                a{
+                    font-size: 1em;
+                }
+            }
+            // This is the blog post content
+            #blog_post_content{
+                display: grid;
+                grid-template-areas: 'blog_image'
+                'blog_body';
+                grid-template-columns: 1fr;
+                height: 500px;
+
+                // This is the blog post image
+                #blog_image{
+                    grid-area: blog_image;
+                    border: $borderSettings;
+                    height: 230px;
+
+                    img{
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+                // This is the body of the blog post
+                #blog_body{
+                    padding: 10px;
+
+                    h5{
+                        font-size: 0.9em;
+                    }
+                    .readmore_btn{
+                        cursor: pointer;
+                        text-decoration: none;
+                        background: grey;
+                        border: none;
+                        outline: none;
+                        padding: 2px 5px;
+                        transition: all 0.4s;
+                        font-family: 'Poppins', sans-serif;
+                        font-size: 0.8em;
+                        color: white;
+                        &:hover{
+                            padding: 2px 8px;
+                        }
+                    }        
+                }
+            }
+            // This is the footer of the blog post
+            #blog_footer{
+                letter-spacing: 1px;
+            }
+        }
+    }
+
+    /* This code is for the contact section of the page */
+    .contact{
+        padding: 10px;
+        margin-top: 200px;
+        height: 100px;
+
+        h2{
+            font-size: 1em;
+        }
+
+        a{
+            position: absolute;
+            left: 50%;
+            top: 60%;
+            transform: translate(-50%,-50%);
+            transition: all 0.3s;
+
+            button{
+                padding: 5px 10px;
+                font-size: 1em;
+
+                &:hover{
+                    padding: 5px 15px;
+                }
+            }
+        }
+
+        // This is my form
+        #myForm{
+            display: none;
+            opacity: 0;
+            position: absolute;
+            left: 50%;
+            top: 55%;
+            transform: translate(-50%,-50%);
+
+            input{
+                font-size: 0.9em;
+                border-radius: 3px;
+                padding: 2px;
+                width: 300px;
+            }
+            textarea{
+                border-radius: 3px;
+                font-size: 1em;
+                width: 300px;
+            }
+        }
+    }
+
+    // This is the footer
+    #footer{
+        margin-top: 100px;
+        padding: 1px;
+        font-size: 1em;
+    }
+
+    // This is the footer on the home page
+    .home-footer{
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        padding: 1px;
+    }
+
+    // This is the register link
+    .register-link{
+        position: absolute;
+        left: 85%;
+        top: 5%;
+        transform: translate(-50%,-50%);
+        width: 90px;
+        padding: 3px 3px;
+        font-size: 0.8em;
+        &:hover{
+            width: 100px;
+        }
+    }
+    // This is the login link
+    .login-link{
+        position: absolute;
+        left: 85%;
+        top: 14%;
+        transform: translate(-50%,-50%);
+        width: 90px;
+        padding: 3px 3px;
+        font-size: 0.8em;
+        &:hover{
+            width: 100px;
+        }
+    }
+
+    // This is the blog content of the archive page
+    #blog_post_content-archive{
+        height: 450px;
+
+        // This is the body of the blog post
+        #blog_body{
+            grid-area: blog_body;
+            border: $borderSettings;
+            padding: 10px;
+
+            h5{
+                font-size: 1.02em;
+            }
+            .readmore_btn{
+                padding: 2px 5px;
+                font-size: 0.9em;
+                &:hover{
+                    padding: 2px 8px;
+                }
+            }        
+        }
+    }
+
+    // This is the form container
+    .form_container{
+        padding: 10px;
+        margin-right: 10px;
+        margin-left: 10px;
+
+        h1{
+            font-size: 1.4em;
+        }
+
+        .blog_img{
+            height: 250px;
+            width: 300px;
+            margin-left: -2%;
+        }
+        .blog_authorName{
+            margin-top: 20px;
+            font-size: 1em;
+        }
+        .theBody_text{
+            font-size: 1em;
+        }
+    }
+
+    #btn_new-post{
+        display: none;
+    }
+
+    .container{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .alert{
+        margin-left: 1.8%;
+        padding: 10px;
+        width: 300px;
+        border-radius: 5px;
+    }
+
+    // This is the information icon
+    #information-img{
+        position: fixed;
+        top: 250px;
+        right: -50px;
+        cursor: pointer;
+    }
+    
+    // This is the information box
+    #information-box-main{
+        display: none;
+        position: fixed;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        padding: 5px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+/* *************************** TABLET *************************** */
+// This is for tablet devices
+@media (min-width:601px)
+and (max-width:800px){
+
+        // This is the home page title
+    #home_title{
+        grid-area: home_title;
+        height: 120px;
+        
+        // This is the main title
+        h4{
+            margin-top: 20px;
+            margin-left: 10px;
+            font-size: 3em;
+        }
+        // This is the slogan
+        p{
+            word-spacing: 4px;
+            font-size: 1em;
+            margin-left: 20px;
+        }
+    }
+
+    // This is the navbar
+    #navbar{
+        height: 50px;
+
+        // This is the navbar links
+        #nav_links{
+            margin-top: 10px;
+            a{
+                margin-right: 30px;
+                font-size: 1.3em;
+            }
+        }
+    }
+
+    // This is the wrapper that centers everything
+    .content-wrapper{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    // This is the container that holds all content
+    #content_container{
+        margin-top: 100px;
+        
+        // This is the blog post container
+        #blog_post_container{
+            height: 400px;
+            border: 1px solid transparent;
+            padding: 5px;
+
+            // This is the header of the blog post
+            #blog_post_head{
+                height: 50px;
+                border: 1px solid transparent;
+                a{
+                    font-size: 1.3em;
+                }
+            }
+            // This is the blog post content
+            #blog_post_content{
+                display: grid;
+                grid-template-areas: 'blog_image blog_body';
+                grid-template-columns: 40% 1fr;
+                height: 380px;
+
+                // This is the blog post image
+                #blog_image{
+                    grid-area: blog_image;
+                    border: $borderSettings;
+                    height: 280px;
+
+                    img{
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+                // This is the body of the blog post
+                #blog_body{
+                    padding: 10px;
+
+                    h5{
+                        font-size: 1em;
+                    }
+                    .readmore_btn{
+                        cursor: pointer;
+                        text-decoration: none;
+                        background: grey;
+                        border: none;
+                        outline: none;
+                        padding: 2px 5px;
+                        transition: all 0.4s;
+                        font-family: 'Poppins', sans-serif;
+                        font-size: 0.8em;
+                        color: white;
+                        &:hover{
+                            padding: 2px 8px;
+                        }
+                    }        
+                }
+            }
+            // This is the footer of the blog post
+            #blog_footer{
+                letter-spacing: 1px;
+            }
+        }
+    }
+
+    /* This code is for the contact section of the page */
+    .contact{
+        padding: 10px;
+        margin-top: 200px;
+        height: 100px;
+
+        h2{
+            font-size: 1.3em;
+        }
+
+        a{
+            position: absolute;
+            left: 50%;
+            top: 60%;
+            transform: translate(-50%,-50%);
+            transition: all 0.3s;
+
+            button{
+                padding: 5px 10px;
+                font-size: 1em;
+
+                &:hover{
+                    padding: 5px 15px;
+                }
+            }
+        }
+
+        // This is my form
+        #myForm{
+            display: none;
+            opacity: 0;
+            position: absolute;
+            left: 50%;
+            top: 55%;
+            transform: translate(-50%,-50%);
+
+            input{
+                font-size: 0.9em;
+                border-radius: 3px;
+                padding: 2px;
+                width: 400px;
+            }
+            textarea{
+                border-radius: 3px;
+                font-size: 1em;
+                width: 400px;
+            }
+        }
+    }
+
+    // This is the footer
+    #footer{
+        margin-top: 100px;
+        padding: 1px;
+        font-size: 1em;
+    }
+
+    // This is the footer on the home page
+    .home-footer{
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        padding: 1px;
+    }
+
+    // This is the register link
+    .register-link{
+        position: absolute;
+        left: 85%;
+        top: 5%;
+        transform: translate(-50%,-50%);
+        width: 90px;
+        padding: 3px 3px;
+        font-size: 0.8em;
+        &:hover{
+            width: 100px;
+        }
+    }
+    // This is the login link
+    .login-link{
+        position: absolute;
+        left: 85%;
+        top: 14%;
+        transform: translate(-50%,-50%);
+        width: 90px;
+        padding: 3px 3px;
+        font-size: 0.8em;
+        &:hover{
+            width: 100px;
+        }
+    }
+
+    // This is the blog content of the archive page
+    #blog_post_content-archive{
+        height: 330px;
+
+        // This is the body of the blog post
+        #blog_body{
+            grid-area: blog_body;
+            border: $borderSettings;
+            padding: 10px;
+
+            h5{
+                font-size: 1.05em;
+            }
+            .readmore_btn{
+                padding: 2px 5px;
+                font-size: 0.9em;
+                &:hover{
+                    padding: 2px 8px;
+                }
+            }        
+        }
+    }
+
+    // This is the form container
+    .form_container{
+        padding: 10px;
+        margin-right: 50px;
+        margin-left: 50px;
+
+        h1{
+            font-size: 1.6em;
+        }
+
+        .blog_img{
+            height: 100%;
+            width: 100%;
+            // height: 250px;
+            // width: 300px;
+            margin-left: -1.5%;
+        }
+        .blog_authorName{
+            margin-top: 20px;
+            font-size: 1em;
+        }
+        .theBody_text{
+            font-size: 1.2em;
+        }
+    }
+
+    #btn_new-post{
+        display: none;
+    }
+
+    .container{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    .alert{
+        margin-left: 1.8%;
+        padding: 10px;
+        width: 300px;
+        border-radius: 5px;
+    }
+
+    // This is the information icon
+    #information-img{
+        position: fixed;
+        top: 250px;
+        right: -50px;
+        cursor: pointer;
+    }
+    
+    // This is the information box
+    #information-box-main{
+        display: none;
+        position: fixed;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        padding: 5px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    // This is the footer section for the login page ( different because of bootstrap -_- )
+    .login-footer{
+        position: relative;
+        bottom: 0;
+        width: 100%;
+    }
+}
+
+
+
+/* *************************** LAPTOP *************************** */
+// This is for tablet devices
+@media (min-width:801px)
+and (max-width:1025px){
+
+        // This is the home page title
+    #home_title{
+        grid-area: home_title;
+        height: 120px;
+        
+        // This is the main title
+        h4{
+            margin-top: 20px;
+            margin-left: 10px;
+            font-size: 3.4em;
+        }
+        // This is the slogan
+        p{
+            word-spacing: 4px;
+            font-size: 1em;
+            margin-left: 20px;
+        }
+    }
+
+    // This is the navbar
+    #navbar{
+        height: 50px;
+
+        // This is the navbar links
+        #nav_links{
+            margin-top: 10px;
+            a{
+                margin-right: 30px;
+                font-size: 1.4em;
+            }
+        }
+    }
+
+    // This is the wrapper that centers everything
+    .content-wrapper{
+        margin-left: 70px;
+        margin-right: 70px;
+    }
+
+    // This is the container that holds all content
+    #content_container{
+        margin-top: 100px;
+        
+        // This is the blog post container
+        #blog_post_container{
+            height: 420px;
+            border: 1px solid transparent;
+            padding: 5px;
+
+            // This is the header of the blog post
+            #blog_post_head{
+                height: 50px;
+                border: 1px solid transparent;
+                a{
+                    font-size: 1.5em;
+                }
+            }
+            // This is the blog post content
+            #blog_post_content{
+                display: grid;
+                grid-template-areas: 'blog_image blog_body';
+                grid-template-columns: 40% 1fr;
+                height: 380px;
+
+                // This is the blog post image
+                #blog_image{
+                    grid-area: blog_image;
+                    border: $borderSettings;
+                    height: 280px;
+
+                    img{
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+                // This is the body of the blog post
+                #blog_body{
+                    padding: 10px;
+
+                    h5{
+                        font-size: 1.2em;
+                    }
+                    .readmore_btn{
+                        cursor: pointer;
+                        text-decoration: none;
+                        background: grey;
+                        border: none;
+                        outline: none;
+                        padding: 5px 10px;
+                        transition: all 0.4s;
+                        font-family: 'Poppins', sans-serif;
+                        font-size: 1em;
+                        color: white;
+                        &:hover{
+                            padding: 5px 15px;
+                        }
+                    }        
+                }
+            }
+            // This is the footer of the blog post
+            #blog_footer{
+                letter-spacing: 1px;
+            }
+        }
+    }
+
+    /* This code is for the contact section of the page */
+    .contact{
+        padding: 10px;
+        margin-top: 200px;
+        height: 100px;
+
+        h2{
+            font-size: 1.3em;
+        }
+
+        a{
+            position: absolute;
+            left: 50%;
+            top: 60%;
+            transform: translate(-50%,-50%);
+            transition: all 0.3s;
+
+            button{
+                padding: 5px 10px;
+                font-size: 1em;
+
+                &:hover{
+                    padding: 5px 15px;
+                }
+            }
+        }
+
+        // This is my form
+        #myForm{
+            display: none;
+            opacity: 0;
+            position: absolute;
+            left: 50%;
+            top: 55%;
+            transform: translate(-50%,-50%);
+
+            input{
+                font-size: 0.9em;
+                border-radius: 3px;
+                padding: 2px;
+                width: 500px;
+            }
+            textarea{
+                border-radius: 3px;
+                font-size: 1em;
+                width: 500px;
+            }
+        }
+    }
+
+    // This is the footer
+    #footer{
+        margin-top: 100px;
+        padding: 1px;
+        font-size: 1em;
+    }
+
+    // This is the footer on the home page
+    .home-footer{
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        padding: 1px;
+    }
+
+    // This is the register link
+    .register-link{
+        position: absolute;
+        left: 85%;
+        top: 5%;
+        transform: translate(-50%,-50%);
+        width: 90px;
+        padding: 3px 3px;
+        font-size: 0.8em;
+        &:hover{
+            width: 100px;
+        }
+    }
+    // This is the login link
+    .login-link{
+        position: absolute;
+        left: 85%;
+        top: 14%;
+        transform: translate(-50%,-50%);
+        width: 90px;
+        padding: 3px 3px;
+        font-size: 0.8em;
+        &:hover{
+            width: 100px;
+        }
+    }
+
+    // This is the blog content of the archive page
+    #blog_post_content-archive{
+        height: 330px;
+
+        // This is the body of the blog post
+        #blog_body{
+            grid-area: blog_body;
+            border: $borderSettings;
+            padding: 10px;
+
+            h5{
+                font-size: 1.2em;
+            }
+            .readmore_btn{
+                padding: 5px 10px;
+                font-size: 1em;
+                &:hover{
+                    padding: 5px 15px;
+                }
+            }        
+        }
+    }
+
+    // This is the form container
+    .form_container{
+        padding: 10px;
+        margin-right: 70px;
+        margin-left: 70px;
+
+        h1{
+            font-size: 1.6em;
+        }
+
+        .blog_img{
+            height: 100%;
+            width: 100%;
+            // height: 250px;
+            // width: 300px;
+            margin-left: -1.5%;
+        }
+        .blog_authorName{
+            margin-top: 20px;
+            font-size: 1em;
+        }
+        .theBody_text{
+            font-size: 1.3em;
+        }
+    }
+
+    #btn_new-post{
+        display: none;
+    }
+
+    .container{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    .alert{
+        margin-left: 1.8%;
+        padding: 10px;
+        width: 300px;
+        border-radius: 5px;
+    }
+
+    // This is the information icon
+    #information-img{
+        position: fixed;
+        top: 250px;
+        right: -50px;
+        cursor: pointer;
+    }
+    
+    // This is the information box
+    #information-box-main{
+        display: none;
+        position: fixed;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        padding: 5px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    // This is the footer section for the login page ( different because of bootstrap -_- )
+    .login-footer{
+        position: relative;
+        bottom: 0;
+        width: 100%;
+    }
+}
+
+
+/* *************************** LARGE LAPTOP *************************** */
+// This is for tablet devices
+@media (min-width:1026px)
+and (max-width:1280px){
+
+    // This is the home page title
+    #home_title{
+        grid-area: home_title;
+        height: 120px;
+        
+        // This is the main title
+        h4{
+            margin-top: 20px;
+            margin-left: 10px;
+            font-size: 3.4em;
+        }
+        // This is the slogan
+        p{
+            word-spacing: 4px;
+            font-size: 1em;
+            margin-left: 20px;
+        }
+    }
+
+    // This is the navbar
+    #navbar{
+        height: 50px;
+
+        // This is the navbar links
+        #nav_links{
+            margin-top: 10px;
+            a{
+                margin-right: 30px;
+                font-size: 1.4em;
+            }
+        }
+    }
+
+    // This is the wrapper that centers everything
+    .content-wrapper{
+        margin-left: 70px;
+        margin-right: 70px;
+    }
+
+    // This is the container that holds all content
+    #content_container{
+        margin-top: 100px;
+        
+        // This is the blog post container
+        #blog_post_container{
+            height: 420px;
+            border: 1px solid transparent;
+            padding: 5px;
+
+            // This is the header of the blog post
+            #blog_post_head{
+                height: 50px;
+                border: 1px solid transparent;
+                a{
+                    font-size: 1.5em;
+                }
+            }
+            // This is the blog post content
+            #blog_post_content{
+                display: grid;
+                grid-template-areas: 'blog_image blog_body';
+                grid-template-columns: 40% 1fr;
+                height: 380px;
+
+                // This is the blog post image
+                #blog_image{
+                    grid-area: blog_image;
+                    border: $borderSettings;
+                    height: 280px;
+
+                    img{
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+                // This is the body of the blog post
+                #blog_body{
+                    padding: 10px;
+
+                    h5{
+                        font-size: 1.2em;
+                    }
+                    .readmore_btn{
+                        cursor: pointer;
+                        text-decoration: none;
+                        background: grey;
+                        border: none;
+                        outline: none;
+                        padding: 5px 10px;
+                        transition: all 0.4s;
+                        font-family: 'Poppins', sans-serif;
+                        font-size: 1em;
+                        color: white;
+                        &:hover{
+                            padding: 5px 15px;
+                        }
+                    }        
+                }
+            }
+            // This is the footer of the blog post
+            #blog_footer{
+                letter-spacing: 1px;
+            }
+        }
+    }
+
+    /* This code is for the contact section of the page */
+    .contact{
+        padding: 10px;
+        margin-top: 200px;
+        height: 100px;
+
+        h2{
+            font-size: 1.3em;
+        }
+
+        a{
+            position: absolute;
+            left: 50%;
+            top: 60%;
+            transform: translate(-50%,-50%);
+            transition: all 0.3s;
+
+            button{
+                padding: 5px 10px;
+                font-size: 1em;
+
+                &:hover{
+                    padding: 5px 15px;
+                }
+            }
+        }
+
+        // This is my form
+        #myForm{
+            display: none;
+            opacity: 0;
+            position: absolute;
+            left: 50%;
+            top: 55%;
+            transform: translate(-50%,-50%);
+
+            input{
+                font-size: 0.9em;
+                border-radius: 3px;
+                padding: 2px;
+                width: 500px;
+            }
+            textarea{
+                border-radius: 3px;
+                font-size: 1em;
+                width: 500px;
+            }
+        }
+    }
+
+    // This is the footer
+    #footer{
+        margin-top: 100px;
+        padding: 1px;
+        font-size: 1em;
+    }
+
+    // This is the footer on the home page
+    .home-footer{
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        padding: 1px;
+    }
+
+    // This is the register link
+    .register-link{
+        position: absolute;
+        left: 85%;
+        top: 5%;
+        transform: translate(-50%,-50%);
+        width: 90px;
+        padding: 3px 3px;
+        font-size: 0.8em;
+        &:hover{
+            width: 100px;
+        }
+    }
+    // This is the login link
+    .login-link{
+        position: absolute;
+        left: 85%;
+        top: 14%;
+        transform: translate(-50%,-50%);
+        width: 90px;
+        padding: 3px 3px;
+        font-size: 0.8em;
+        &:hover{
+            width: 100px;
+        }
+    }
+
+    // This is the blog content of the archive page
+    #blog_post_content-archive{
+        height: 330px;
+
+        // This is the body of the blog post
+        #blog_body{
+            grid-area: blog_body;
+            border: $borderSettings;
+            padding: 10px;
+
+            h5{
+                font-size: 1.2em;
+            }
+            .readmore_btn{
+                padding: 5px 10px;
+                font-size: 1em;
+                &:hover{
+                    padding: 5px 15px;
+                }
+            }        
+        }
+    }
+
+    // This is the form container
+    .form_container{
+        padding: 10px;
+        margin-right: 70px;
+        margin-left: 70px;
+
+        h1{
+            font-size: 1.6em;
+        }
+
+        .blog_img{
+            height: 100%;
+            width: 100%;
+            // height: 250px;
+            // width: 300px;
+            margin-left: -1.5%;
+        }
+        .blog_authorName{
+            margin-top: 20px;
+            font-size: 1em;
+        }
+        .theBody_text{
+            font-size: 1.3em;
+        }
+    }
+
+    #btn_new-post{
+        display: none;
+    }
+
+    .container{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    .alert{
+        margin-left: 1.8%;
+        padding: 10px;
+        width: 300px;
+        border-radius: 5px;
+    }
+
+    // This is the information icon
+    #information-img{
+        position: fixed;
+        top: 250px;
+        right: -50px;
+        cursor: pointer;
+    }
+    
+    // This is the information box
+    #information-box-main{
+        display: none;
+        position: fixed;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        padding: 5px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    // This is the footer section for the login page ( different because of bootstrap -_- )
+    .login-footer{
+        position: relative;
+        bottom: 0;
+        width: 100%;
+    }
+}
+

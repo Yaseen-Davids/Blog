@@ -1,0 +1,566 @@
+// This is the SASS stylesheet
+
+
+/* VARIABLES */
+// $borderSettings: 1px solid black;
+$borderSettings: none;
+
+/* MIXINS */
+@mixin mainBtn {
+    width: 90px;
+    cursor: pointer;
+    text-decoration: none;
+    background: rgb(255, 255, 255);
+    border: none;
+    outline: none;
+    padding: 5px 5px;
+    transition: all 0.4s;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9em;
+    color: rgb(182, 0, 0);
+    &:hover{
+        width: 100px;
+    }
+}
+
+// Universal selector
+* {
+    margin: 0;
+    font-weight: lighter;
+}
+
+// This is the main grid container
+#container{
+    display: grid;
+    grid-template-areas:'home_title'
+    'navbar'
+    'home_image'
+    'home_image_text'
+    'content_container'
+    'footer'
+    ;
+    grid-template-columns: 1fr;
+}
+
+// Color in title
+.header_a{      
+    color: rgb(185, 20, 20);
+}
+
+// This is the home page title
+#home_title{
+    grid-area: home_title;
+    height: 120px;
+    border: 1px solid transparent;
+    background: black;
+    
+    // Home link
+    a{
+        color: white;
+        text-decoration: none;
+    }
+    
+    // This is the main title
+    h4{
+        margin-top: 20px;
+        margin-left: 100px;
+        font-size: 3em;
+        font-family: 'Lora', serif;
+    }
+    // This is the slogan
+    p{
+        word-spacing: 4px;
+        color: white;
+        font-family: 'Poppins', sans-serif;
+        font-size: 1em;
+        margin-left: 100px;
+    }
+}
+
+
+// This is the navbar
+#navbar{
+    grid-area: navbar;
+    border: 1px solid transparent;
+    height: 50px;
+    background: #e9e9e9d3;
+
+    // This is the navbar links
+    #nav_links{
+        text-align: center;
+        margin-top: 10px;
+        a{
+            font-family: 'Poppins', sans-serif;
+            margin-right: 40px;
+            font-size: 1.3em;
+            text-decoration: none;
+            color: rgb(185, 20, 20);
+            transition: all 0.3s;
+            &:hover{
+                color: rgb(61, 61, 61);
+            }
+        }
+        .selected{
+            color: rgb(61, 61, 61);
+        }
+    }
+}
+
+// This is the wrapper that centers everything
+.content-wrapper{
+    margin-left: 250px;
+    margin-right: 250px;
+}
+
+// This is the container that holds all content
+#content_container{
+    grid-area: content_container;
+    border: $borderSettings;
+    margin-top: 100px;
+    font-family: 'Poppins', sans-serif;
+
+    p{
+        color: rgb(65, 65, 65);
+    }
+    
+    // This is the blog post container
+    #blog_post_container{
+        height: 360px;
+        border: 1px solid transparent;
+        background: #e9e9e9d3;
+        padding: 10px;
+
+        // This is the header of the blog post
+        #blog_post_head{
+            height: 70px;
+            border: 1px solid transparent;
+            a{
+                text-align: center;
+                font-size: 1.5em;
+                color: rgb(192, 2, 2);
+                transition: all 0.2s;
+                &:hover{
+                    text-decoration: none;
+                }
+            }
+        }
+        // This is the blog post content
+        #blog_post_content{
+            display: grid;
+            grid-template-areas: 'blog_image blog_body';
+            grid-template-columns: 30% 1fr;
+            height: 250px;
+
+            // This is the blog post image
+            #blog_image{
+                grid-area: blog_image;
+                border: $borderSettings;
+                height: 230px;
+
+                img{
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+            // This is the body of the blog post
+            #blog_body{
+                grid-area: blog_body;
+                border: $borderSettings;
+                padding: 10px;
+
+                h5{
+                    font-size: 1.1em;
+                }
+                .readmore_btn{
+                    cursor: pointer;
+                    text-decoration: none;
+                    background: grey;
+                    border: none;
+                    outline: none;
+                    padding: 5px 10px;
+                    transition: all 0.4s;
+                    font-family: 'Poppins', sans-serif;
+                    font-size: 0.9em;
+                    color: white;
+                    &:hover{
+                        padding: 5px 15px;
+                    }
+                }        
+            }
+        }
+        // This is the footer of the blog post
+        #blog_footer{
+            letter-spacing: 1px;
+        }
+    }
+}
+
+// This is the register link
+.register-link{
+    position: absolute;
+    left: 80%;
+    top: 5%;
+    transform: translate(-50%,-50%);
+    @include mainBtn;
+}
+// This is the login link
+.login-link{
+    position: absolute;
+    left: 88%;
+    top: 5%;
+    transform: translate(-50%,-50%);
+    @include mainBtn;
+}
+
+// This is the author name style
+.author_name{
+    color: red;
+}
+
+// This is the footer
+#footer{
+    grid-area: footer;
+    margin-top: 100px;
+    padding: 10px;
+    color: white;
+    background: black;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5em;
+}
+
+// This is the footer on the home page
+.home-footer{
+    position: relative;
+    bottom: 0;
+    height: 40px;
+    width: 98.5%;
+    padding: 0px;
+}
+
+// This is the blog image style
+.blog_img{
+    padding: 10px;
+    img{
+        height: 100%;
+        width: 100%;
+    }
+}
+
+// This is the blog author name position
+.blog_authorName{
+    margin-bottom: 20px;
+}
+
+// This is the form container
+.form_container{
+    margin-top: 50px;
+    color: rgb(223, 223, 223);
+    padding: 10px;
+    background-color: rgba(8, 8, 8, 0.651);
+}
+
+// This is the body text font
+.theBody_text{
+    font-size: 1.8em;
+}
+
+// This is the new post button
+#btn_new-post{
+    position: absolute;
+    left: 50px;
+    top: 150px;
+    border-radius: 5px;
+    width: 120px;
+    cursor: pointer;
+    text-decoration: none;
+    background: rgb(0, 2, 129);
+    border: none;
+    outline: none;
+    padding: 10px 10px;
+    transition: all 0.4s;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9em;
+    color: white;
+    &:hover{
+        width: 130px;
+    }
+}
+
+// This is the new post button
+#new_post_content{
+    position: sticky;
+    top: 20px;
+    left: 50px;
+}
+
+
+
+/* ********************************** blog_post page styling ********************************** */
+// This is the button
+.bBtn{
+    margin-top: 20px;
+    border-radius: 5px;
+    width: 120px;
+    cursor: pointer;
+    text-decoration: none;
+    background: rgb(0, 0, 0);
+    border: none;
+    outline: none;
+    padding: 10px 10px;
+    transition: all 0.4s;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9em;
+    color: white;
+    &:hover{
+        width: 130px;
+    }
+}
+
+// This is the edit button style
+.btn-edit{
+    background: rgb(40, 40, 199);
+}
+
+// This is the delete button style
+.btn-delete{
+    background: rgb(228, 26, 26);
+}
+
+// This is the form container
+.form_container{
+    padding: 20px;
+    margin-right: 200px;
+    margin-left: 200px;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+
+    .blog_img{
+        height: 500px;
+        width: 600px;
+        margin-left: 13%;
+    }
+    .blog_authorName{
+        margin-top: 20px;
+        font-size: 1.2em;
+    }
+    .theBody_text{
+        font-size: 1.3em;
+    }
+}
+
+
+/* ********************************** new_post page styling ********************************** */
+// This is the alert message styling
+.alert{
+    margin-left: 38%;
+    padding: 10px;
+    width: 300px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    border-radius: 5px;
+}
+
+// This is the alert message success
+.alert-success{
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #3c763d;
+}
+
+// This is the alert message error/danger
+.alert-error, .alert-danger{
+    background-color: #f2dede;
+    color: #a94442;
+    border-color: #ebccd1;
+}
+
+
+/* This code is for the contact section of the page */
+.contact{
+    margin-top: 100px;
+    padding: 10px;
+    height: 150px;
+    box-shadow: 5px 5px 20px rgb(235, 235, 235);
+    background-color: rgba(54, 54, 54, 0.842);
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.5s;
+
+    h2{
+        text-align: center;
+        color: white;
+    }
+
+    a{
+        position: absolute;
+        left: 50%;
+        top: 60%;
+        transform: translate(-50%,-50%);
+        overflow: hidden;
+        transition: all 0.3s;
+
+        button{
+            padding: 10px 20px;
+            background: linear-gradient(to right, #7474BF, #348AC7);
+            color: white;
+            border: none;
+            outline: none;
+            font-size: 1.3em;
+            overflow: hidden;
+            transition: all 0.3s;
+
+            &:hover{
+                padding: 10px 25px;
+            }
+        }
+    }
+
+    #myForm{
+        display: none;
+        opacity: 0;
+        position: absolute;
+        left: 50%;
+        top: 55%;
+        transform: translate(-50%,-50%);
+
+        input{
+            font-size: 1.1em;
+            border: none;
+            border-radius: 3px;
+            padding: 6px;
+            width: 600px;
+            outline-color: green;
+        }
+        textarea{
+            font-family: 'Poppins', sans-serif;
+            border-radius: 3px;
+            font-size: 1.1em;
+            border: none;
+            resize: none;
+            width: 610px;
+        }
+        button{
+            padding: 10px 15px;
+            border-radius: 3px;
+            background: linear-gradient(to right, #1efa29, rgb(0, 201, 27));
+            color: white;
+            border: none;
+            outline: none;
+            outline-color: green;
+            font-size: 1em;
+            margin-left: 38%;
+            transition: all 0.3s;
+            &:hover{
+                padding: 10px 22px;
+            }
+        }
+    }
+}
+
+
+// This is the footer section for the login page ( different because of bootstrap -_- )
+.login-footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+// This is the blog content of the archive page
+#blog_post_content-archive{
+    display: grid;
+    grid-template-areas: 'blog_body';
+    grid-template-columns: 1fr;
+    height: 250px;
+
+    // This is the blog post image
+    #blog_image{
+        grid-area: blog_image;
+        border: $borderSettings;
+        height: 230px;
+
+        img{
+            height: 100%;
+            width: 100%;
+        }
+    }
+    // This is the body of the blog post
+    #blog_body{
+        grid-area: blog_body;
+        border: $borderSettings;
+        padding: 10px;
+
+        h5{
+            font-size: 1.1em;
+        }
+        .readmore_btn{
+            cursor: pointer;
+            text-decoration: none;
+            background: grey;
+            border: none;
+            outline: none;
+            padding: 5px 10px;
+            transition: all 0.4s;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9em;
+            color: white;
+            &:hover{
+                padding: 5px 15px;
+            }
+        }        
+    }
+}
+// This is the footer of the blog post
+#blog_footer{
+    letter-spacing: 1px;
+}
+
+// This is the information icon
+#information-img{
+    position: fixed;
+    top: 250px;
+    right: -50px;
+    transition: all 1s;
+}
+
+// This is the information box
+#information-box-main{
+    display: none;
+    position: fixed;
+    border-radius: 10px;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: rgba(0, 0, 0, 0.801);
+    padding: 20px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+
+    a{
+        color: white;
+    }
+}
+
+#logged-img{
+    position: fixed;
+    top: 250px;
+    right: -50px;
+    transition: all 1s;
+}
+
+// This is the information box
+#logged-in-main{
+    display: none;
+    border-radius: 10px;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #3c763d;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+// This is the responsive stylesheet
+@import 'responsive';

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>StanceNation - Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="favicon" href="https://image.ibb.co/b8w7r8/logo_preview_4a613baa_64db_4063_9dfc_f1a90ee1b70d.jpg">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script> 
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <!-- summernote css/js -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+    <!-- Font links -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins|Lora" rel="stylesheet">
+</head>
+<body>
+
+    <!-- This is the main container -->
+    <div id="container">
+
+        <!-- This is the title section> -->
+        <section>
+            <div id="home_title">
+                <!-- HEADER -->
+                <a href="/"><h4>ST<span class="header_a">Λ</span>NCE | N<span class="header_a">Λ</span>TION</h4></a>
+                <!-- SLOGAN -->
+                <p>The <span class="header_a">HOME</span> of <span class="header_a">STANCE</span> Cars</p>
+            </div>
+        </section>
+
+        <!-- This is the navbar -->
+        <nav>
+            <div id="navbar">
+                <!-- This is the navbar links -->
+                <div id="nav_links">
+                    <a href="/">Home</a>
+                    <!-- If user is logged in, show new post link -->
+                    <% if (user) { %>
+                        <a href="/new_post">New Post</a>
+                    <% } %>
+                    <a href="/archives">Archives</a>
+                    <a href="/users/register" class="register-link">Register</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <!-- This is the title -->
+            <h1>
+                <%= title %>
+            </h1>
+            <br>
+
+            <!-- This is the message system -->
+            <%- messages('message', locals) %>
+
+            <!-- This is the error/success messages -->
+            <% if (errors) { %>
+                <% errors.forEach(function (error){ %>
+                    <div class="alert alert-danger">
+                        <%= error.msg %>
+                    </div>
+                <% }) %>
+            <% } %>
+
+            <!-- This is the form  -->
+            <form method="POST" action="/users/login">
+                <div id="form-group">
+                    <!-- USERNAME -->
+                    <label for="author">Username : </label>
+                    <input class="form-control" name="username" type="text" placeholder="Username here">
+                </div>
+                <br>
+                <div id="form-group">
+                    <!-- PASSWORD -->
+                    <label for="author">Password : </label>
+                    <input class="form-control" name="password" type="password" placeholder="Password here">
+                </div>
+                <br>
+                <br>
+                <!-- SUBMIT BUTTON -->
+                <input class="btn btn-primary" type="submit" value="Submit">
+            </form>
+        </div>
+
+        <!-- This is the footer -->
+        <footer>
+            <div id="footer" class="login-footer">
+                <div class="content-wrapper">
+                    Copyright &copy; 2018 &nbsp; | &nbsp;<span class="header_a">Yaseen Davids</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
+    <script src="/javascripts/main.js"></script>
+
+</body>
+</html>
